@@ -1,5 +1,6 @@
 import Image from 'next/image';
-
+import ReadButton from '@/components/bookDetails/ReadButton';
+import WishListButton from '@/components/bookDetails/WishListButton';
 const getBooks = async () => {
     const response = await fetch('http://localhost:3000/booksData.json');
     const data = await response.json();
@@ -97,12 +98,9 @@ const BookDetailsPage = async ({ params }) => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-4 pt-4">
-                        <button className="px-7 py-3 border border-gray-300 rounded-lg font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
-                            Read
-                        </button>
-                        <button className="px-7 py-3 bg-[#59C6D2] hover:bg-[#48b2be] text-white rounded-lg font-semibold transition-colors">
-                            Wishlist
-                        </button>
+                            <ReadButton book={book}></ReadButton>
+                            <WishListButton book ={book}></WishListButton>
+                        
                     </div>
                 </div>
             </div>
