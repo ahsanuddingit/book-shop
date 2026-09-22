@@ -2,7 +2,7 @@ import Image from 'next/image';
 import ReadButton from '@/components/bookDetails/ReadButton';
 import WishListButton from '@/components/bookDetails/WishListButton';
 const getBooks = async () => {
-    const response = await fetch('/public/booksData.json');
+    const response = await fetch('https://book-shop-pi-ashen.vercel.app/booksData.json');
     const data = await response.json();
     return data;
 };
