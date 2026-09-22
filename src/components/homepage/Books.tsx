@@ -3,7 +3,7 @@ import BookCard from '../shared/BookCard';
 import { IBook } from '@/types/books.type';
 
 const getBooks = async ()=>{
-    const responce = await fetch('http://localhost:3000/booksData.json');
+    const responce = await fetch('/public/booksData.json');
     const data = await responce.json()
     return data ;
 }
